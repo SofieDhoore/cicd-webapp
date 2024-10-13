@@ -21,5 +21,6 @@ jobs:
 
       - name: Run linter
         run: |
-          cd ./webapp
+          cd webapp
           yarn lint
+        continue-on-error: false
