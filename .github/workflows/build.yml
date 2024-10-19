@@ -40,5 +40,5 @@ jobs:
         with:
           context: ./webapp
           file: ./webapp/Dockerfile
-          tags: sofie.dhoore/webapp:latest
+          tags: sofiedhoore/webapp:latest
           push: true
