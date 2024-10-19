@@ -33,6 +33,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./webapp
-          file: ../Dockerfile
+          file: ./webapp/Dockerfile
           tags: sofie.dhoore/webapp:latest
           push: false
