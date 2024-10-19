@@ -28,3 +28,11 @@ jobs:
           cd webapp
           yarn lint
         continue-on-error: false
+
+      - name: Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          tags: sofie.dhoore/webapp:latest
+          push: false
