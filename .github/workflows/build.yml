@@ -29,10 +29,16 @@ jobs:
           yarn lint
         continue-on-error: false
 
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
       - name: Docker image
         uses: docker/build-push-action@v6
         with:
           context: ./webapp
           file: ./webapp/Dockerfile
           tags: sofie.dhoore/webapp:latest
-          push: false
+          push: true
